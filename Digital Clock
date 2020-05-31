@@ -1,0 +1,17 @@
+from tkinter import *
+from tkinter.ttk import *
+from time import strftime
+
+gui = Tk()
+gui.title("DIGITL CLOCK")
+gui.resizable(0,0)
+
+def time():
+    str = strftime("%H:%M:%S")
+    lb.config(text=str)
+    lb.after(1,time)
+
+lb=Label(gui, font=("calibri", 30, "bold"), background="white", foreground="green")
+lb.pack(anchor=CENTER)
+time()
+gui.mainloop()
